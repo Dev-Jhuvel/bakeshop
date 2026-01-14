@@ -49,10 +49,10 @@ export default function Register() {
     return (
         <div className="bg-white flex items-center justify-center h-screen">
             <div className="bg-[var(--background)] w-[80%] m-auto rounded-2xl flex shadow-lg max-sm:w-full max-sm:rounded-none max-sm:bg-[url('../images/breads.jpg')] bg-cover">
-                <div className="w-[40%] h-[90vh] rounded-l-2xl relative max-sm:w-full max-sm:h-screen backdrop-blur-xs m-auto flex items-center justify-center">
-                    <div className="absolute size-18 left-4 top-3 max-sm:size-25 m-auto">
+                <div className="w-[40%] h-[90vh] rounded-l-2xl relative max-sm:w-full max-sm:h-screen backdrop-blur-xs">
+                    <div className="w-full h-[23%] max-sm:size-25 m-auto">
                         <img
-                            className="w-full h-full rounded-full"
+                            className="size-25 max-sm:size-18 mt-3 min-md:ml-5 rounded-full inline-flex"
                             src={logo}
                             alt=""
                         />

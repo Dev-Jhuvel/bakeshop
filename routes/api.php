@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Models\Post;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -22,3 +23,11 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::post('/register', [AuthController::class, 'register']);
 Route::post('/login', [AuthController::class, 'login']);
 Route::post('/logout', [AuthController::class, 'logout'])->middleware('auth:sanctum');
+
+
+Route::prefix('post')->middleware('auth')->group(function (){
+    Route::get('/', [Post::class, 'index']);
+    Route::get('/store', [Post::class, 'store']);
+    Route::get('/update', [Post::class, 'update']);
+    Route::put('/delete', [Post::class, 'delete']);
+});

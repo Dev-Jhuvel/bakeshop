@@ -49,10 +49,10 @@ export default function Login() {
                 <div className="w-[60%] m-auto max-sm:hidden flex items-center justify-center">
                     <div className="bg-[url('../images/breads_eggs.jpg')] bg-cover h-[85vh] rounded-2xl w-[94%] "></div>
                 </div>
-                <div className="w-[40%] h-[90vh] rounded-l-2xl relative max-sm:w-full max-sm:h-screen backdrop-blur-xs m-auto flex items-center justify-center">
-                    <div className="absolute size-18 left-4 top-3 max-sm:size-25 m-auto">
+                <div className="w-[40%] h-[90vh] rounded-l-2xl relative max-sm:w-full max-sm:h-screen backdrop-blur-xs">
+                    <div className="w-full h-[30%] max-sm:size-25 m-auto">
                         <img
-                            className="w-full h-full rounded-full"
+                            className="size-25 max-sm:size-18 mt-3 rounded-full inline-flex"
                             src={logo}
                             alt=""
                         />

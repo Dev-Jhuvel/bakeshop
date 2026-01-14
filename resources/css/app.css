@@ -24,5 +24,21 @@
     --neutral-text: #c9c7c9;
     --background: #261b25;
     --background-text: #c09a5f;
+}
 
+@layer components {
+    .button-primary {
+        @apply text-white bg-[var(--primary)] box-border border border-transparent hover:bg-[var(--secondary)] focus:ring-2 focus:ring-[var(--primary)] shadow-xs font-medium leading-5 rounded-md text-sm px-4 py-2.5 focus:outline-none;
+    }
+    .button-secondary {
+        @apply text-white bg-[var(--secondary)] box-border border border-transparent hover:bg-[var(--primary)] focus:ring-2 focus:ring-[var(--secondary)] shadow-xs font-medium leading-5 rounded-md text-sm px-4 py-2.5 focus:outline-none;
+    }
+
+    .button-accent {
+        @apply text-white bg-[var(--accent)] box-border border border-transparent hover:bg-[var(--secondary)] focus:ring-2 focus:ring-[var(--accent)] shadow-xs font-medium leading-5 rounded-md text-sm px-4 py-2.5 focus:outline-none;
+    }
+
+    .button {
+        @apply text-white box-border border border-transparent hover:bg-[var(--secondary)] focus:ring-2 focus:ring-[var(--primary)] shadow-xs font-medium leading-5 rounded-md text-sm px-4 py-2.5 focus:outline-none;
+    }
 }

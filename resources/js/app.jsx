@@ -9,6 +9,7 @@ import useThemeStore from "./Stores/useThemeStore.js";
 import Home from "./Pages/Home.jsx";
 import AuthenticatedRoute from "./Components/AuthenticatedRoute.jsx";
 import GuestRoute from "./Components/GuestRoute.jsx";
+import Post from "./Pages/Post.jsx";
 
 const App = () => {
     const [isDark, setIsDark] = useState(false);
@@ -32,18 +33,28 @@ const App = () => {
         <>
             <Toaster position="top-right" reverseOrder={false} />
             <Router>
-                <nav>
-                    {!isAuthenticated ? (
-                        <>
-                            <Link to="/register">Register</Link>
-                            <Link to="/login">Login</Link>
-                        </>
-                    ) : (
-                        <>
-                            <button onClick={logout}>Logout</button>
-                        </>
-                    )}
-                     <button onClick={()=> {toggleTheme()}}>{isDark ? 'Dark' : 'Light'}</button>
+                <nav className="bg-[var(--background)]">
+                   <ul className="flex items-center justify-between">
+                        {isAuthenticated && 
+                            <>
+                                <li>
+                                    <Link to="/home" className="text-[var(--primary)] font-bold text-xl mx-3">Home</Link>
+                                </li>
+                                <li>
+                                    <Link to="/post" className="text-[var(--primary)] font-bold text-xl mx-3">Post</Link>
+                                </li>
+                            </>
+                        }
+                       
+                        <li>
+                            <button onClick={()=> {toggleTheme()}} className="text-[var(--primary)] font-bold text-xl mx-3">{isDark ? 'Dark' : 'Light'}</button>
+                        </li>
+                        {isAuthenticated && 
+                            <li>
+                                <button onClick={()=> {logout()}} className="text-[var(--primary)] font-bold text-xl mx-3">Logout</button>
+                            </li>
+                        }
+                   </ul>
                 </nav>
                 <Routes>
                     <Route
@@ -67,6 +78,14 @@ const App = () => {
                         element={
                             <AuthenticatedRoute>
                                 <Home />
+                            </AuthenticatedRoute>
+                        }
+                    ></Route>
+                    <Route
+                        path="/post"
+                        element={
+                            <AuthenticatedRoute>
+                                <Post />
                             </AuthenticatedRoute>
                         }
                     ></Route>
